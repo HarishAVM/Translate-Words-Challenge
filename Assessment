@@ -1,0 +1,23 @@
+f1=open("english.txt",'x')
+f2=open("french.txt",'x')
+f1=open("english.txt",'r')
+f2=open("french.txt",'r')
+f1=open("english.txt",'w')
+f2=open("french.txt",'w')
+eng=['abide','about','above','abroad','absence','abuse','according']
+fren=['respecter','sur','au dessus','ÃlÃ©tranger','absence','abuser de','selon']
+f1.write(str(eng))
+f2.write(str(fren))
+string="respecter , sur , au dessus , Ã  lÃ©tranger , absence , abuser de , selon"
+s1=(list(string.split("")))
+fout=open('out.txt','w')
+out=[]
+for i in s1:
+  if i in eng:
+    indx=eng.index(i)
+    res=fren[indx]
+  out.append(res)
+fout.write(str(out))
+from collections import Counter
+counts=Counter(out)
+print(counts)
